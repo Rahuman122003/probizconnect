@@ -48,7 +48,7 @@ import company8 from "@/assets/indiamart.png";
 import company9 from "@/assets/keka.svg";
 import company10 from "@/assets/quickbook.svg";
 import company11 from "@/assets/sap.svg";
-import company12 from "@/assets/WhatsApp.svg";
+import company12 from "@/assets/whatsapp.svg";
 import company13 from "@/assets/paytm.png";
 import home from "@/assets/home.png";
 
