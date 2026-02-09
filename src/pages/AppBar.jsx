@@ -88,7 +88,7 @@ const AppBar = () => {
                 </div>
 
                   <NavLink
-                  to="/blogs"
+                  to="https://blogify-module.vercel.app"
                   className={({ isActive }) =>
                     `${baseClasses} ${isActive ? "text-purple-400 font-semibold" : "hover:text-foreground"}`
                   }
