@@ -416,7 +416,7 @@ const SalesConnect = () => {
             <img
               src="src/assets/glasslogo.png"
               alt="Team collaboration"
-              className="w-32 h-32 rounded-full mx-auto mb-1 border-1 border-white shadow-lg"
+              className="w-32 h-32 rounded-full mx-auto mb-2 border-2 border-white shadow-lg"
             />
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">

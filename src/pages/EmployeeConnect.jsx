@@ -558,7 +558,7 @@ const EmployeeConnect = () => {
             <img
               src="src/assets/glasslogo.png"
               alt="Sales team logo"
-              className="w-32 h-32 rounded-full mx-auto mb-0 border-0 border-white shadow-2xl"
+              className="w-32 h-32 rounded-full mx-auto mb-2 border-2 border-white shadow-2xl"
             />
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
