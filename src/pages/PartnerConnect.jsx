@@ -164,13 +164,17 @@ const PartnerConnect = () => {
                             without partners or resellers to sell your products to market.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                            <button className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center">
-                                Connect With Partners
-                                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                            </button>
+                            <a href="https://dealerconnect.in/book-a-demo" target="_blank" rel="noopener noreferrer">
+                                <button className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center">
+                                    Connect With Partners
+                                    <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                                </button>
+                            </a>
+                            <a href="">
                             <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl text-lg font-semibold hover:border-blue-500 hover:text-blue-600 transition-all duration-300">
                                 Explore Platform
                             </button>
+                            </a>
                         </div>
                     </div>
 
@@ -412,9 +416,9 @@ const PartnerConnect = () => {
                 <div className="max-w-4xl mx-auto text-center">
                     <div className="mb-8">
                         <img
-                            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=200&h=200&fit=crop&crop=faces"
+                            src="src/assets/glasslogo.png"
                             alt="Partnership success"
-                            className="w-32 h-32 rounded-full mx-auto mb-8 border-4 border-white shadow-2xl"
+                            className="w-32 h-32 rounded-full mx-auto mb-0 border-0 border-white shadow-2xl"
                         />
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -425,12 +429,16 @@ const PartnerConnect = () => {
                         bridge you to success through strategic partner relationships.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://dealerconnect.in/book-a-demo" target="_blank" rel="noopener noreferrer">
                         <button className="bg-white text-blue-600 px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                             Start Connecting Partners
                         </button>
+                        </a>
+                        <a href="https://dealerconnect.in/book-a-demo/ola/services/consultation" target="_blank" rel="noopener noreferrer">
                         <button className="border-2 border-white text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300">
                             Schedule Partnership Call
                         </button>
+                        </a>
                     </div>
                 </div>
             </section>

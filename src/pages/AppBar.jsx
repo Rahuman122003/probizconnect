@@ -113,9 +113,17 @@ const AppBar = () => {
             </div>
 
             {/* Desktop Download Button - Fixed with explicit display classes */}
-            <Button className="hidden sm:flex sm:bg-foreground sm:text-background hover:bg-foreground/90 rounded-full px-4 lg:px-6 items-center py-2 text-sm lg:text-base">
+            <Button
+  asChild
+  className="hidden sm:flex sm:bg-foreground sm:text-background hover:bg-foreground/90 rounded-full px-4 lg:px-6 items-center py-2 text-sm lg:text-base"
+>
+  <Link to="https://dealerconnect.in/book-a-demo">Book a Demo</Link>
+</Button>
+            
+            {/*<Button className="hidden sm:flex sm:bg-foreground sm:text-background hover:bg-foreground/90 rounded-full px-4 lg:px-6 items-center py-2 text-sm lg:text-base">
               Book a Demo
-            </Button>
+            </Button>*/}
+            
 
             {/* Mobile Menu Button */}
             <button
@@ -243,10 +251,18 @@ const AppBar = () => {
             </NavLink>
 
        
+              {/* Mobile Download Button */}
+              <Button
+  asChild
+  className="bg-foreground text-background hover:bg-foreground/90 rounded-full w-full flex items-center justify-center"
+>
+  <Link to="https://dealerconnect.in/book-a-demo">Book a Demo</Link>
+</Button>
 
-            <Button className="bg-foreground text-background hover:bg-foreground/90 rounded-full w-full flex items-center justify-center">
+
+            {/*<Button className="bg-foreground text-background hover:bg-foreground/90 rounded-full w-full flex items-center justify-center">
               Book a Demo
-            </Button>
+            </Button>*/}
           </div>
         </div>
       )}
