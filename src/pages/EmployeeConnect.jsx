@@ -24,6 +24,8 @@ import {
   Headphones,
 } from "lucide-react";
 import fq from "../assets/faqs.jpg";
+import glass from "@/assets/glasslogo.png";
+
 const EmployeeConnect = () => {
   const [currentFeature, setCurrentFeature] = useState(0);
   const [animatedCards, setAnimatedCards] = useState({});
@@ -556,7 +558,7 @@ const EmployeeConnect = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-8">
             <img
-              src="src/assets/glasslogo.png"
+              src={glass}
               alt="Sales team logo"
               className="w-32 h-32 rounded-full mx-auto mb-2 border-2 border-white shadow-2xl"
             />

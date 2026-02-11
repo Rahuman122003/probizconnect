@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import profile1 from "../assets/profile1.png";
 import profile2 from "../assets/profile2.png";
+import glass from "@/assets/glasslogo.png";
 
 const About = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -156,7 +157,7 @@ const About = () => {
                 <div className="text-center mb-8">
                   <div className="w-20 h-20 bg-gradient-to-r from-blue-400 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <img
-                      src="src/assets/glasslogo.png"
+                     src={glass}
                       alt="Team collaboration"
                       />
                   </div>

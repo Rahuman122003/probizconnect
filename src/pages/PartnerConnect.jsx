@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Users, ShoppingBag, Award, Eye, TrendingUp, Handshake, Target, Gift, Zap, ArrowRight, CheckCircle, Star, Crown, Heart, DollarSign, ChevronDown, ChevronUp, Building, UserPlus, BarChart3, MessageCircle } from 'lucide-react';
 import fq from '../assets/faqs.jpg';
+import glass from "@/assets/glasslogo.png";
+
 const PartnerConnect = () => {
     const [currentPartner, setCurrentPartner] = useState(0);
     const [animatedCards, setAnimatedCards] = useState({});
@@ -416,7 +418,7 @@ const PartnerConnect = () => {
                 <div className="max-w-4xl mx-auto text-center">
                     <div className="mb-8">
                         <img
-                            src="src/assets/glasslogo.png"
+                            src={glass}
                             alt="Partnership success"
                             className="w-32 h-32 rounded-full mx-auto mb-2 border-2 border-white shadow-2xl"
                         />

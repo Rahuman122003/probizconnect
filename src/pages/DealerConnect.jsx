@@ -20,6 +20,8 @@ import {
   Network,
 } from "lucide-react";
 import fq from "../assets/faqs.jpg";
+import glass from "@/assets/glasslogo.png";
+
 const DealerConnect = () => {
   const [animatedElements, setAnimatedElements] = useState({});
   const [currentStat, setCurrentStat] = useState(0);
@@ -524,7 +526,7 @@ const DealerConnect = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-8">
             <img
-              src="src/assets/glasslogo.png"
+              src={glass}
               alt="Dealer Connect Logo"
               className="w-32 h-32 rounded-full mx-auto mb-2 border-2 border-white shadow-lg"
             />
