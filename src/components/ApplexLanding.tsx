@@ -31,7 +31,7 @@ import customerTestimonial from "@/assets/customer-testimonial.jpg";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import frame1 from "@/assets/side1.png";
-import frame2 from "@/assets/frame 44.png";
+import glass from "@/assets/glasslogo.png";
 import frame3 from "@/assets/side2.png";
 import frame4 from "@/assets/frame 1.png";
 import frame5 from "@/assets/side3.png";
@@ -154,7 +154,11 @@ export function ApplexLanding() {
                       <p className="text-xs text-muted-foreground">Team discussions</p>
                     </div>
                   </div> */}
-                  {/* <img src={frame2} alt="ProbizConnect Logo" className="w-full h-full xl:w-full xl:h-fullmb-2" /> */}
+                  <img
+                    src={glass}
+                    alt="ProbizConnect Logo"
+                    className="w-full h-full xl:w-full xl:h-fullmb-2"
+                  />
                 </div>
 
                 <div className="hidden lg:block absolute -right-24 xl:-right-68 top-10 w-40 xl:w-48 transform -rotate-[-10deg]">
@@ -690,7 +694,7 @@ export function ApplexLanding() {
             </p> */}
           </div>
           <img
-            src={dashboard}
+            src={frame}
             alt="Explore"
             className="w-full animate-fade-in rounded-lg shadow-xl shadow-black"
           />
