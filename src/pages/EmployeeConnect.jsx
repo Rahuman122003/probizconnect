@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import fq from "../assets/faqs.jpg";
 import glass from "@/assets/glasslogo.png";
+import e1 from "@/assets/emp.png";
 
 const EmployeeConnect = () => {
   const [currentFeature, setCurrentFeature] = useState(0);
@@ -276,7 +277,7 @@ const EmployeeConnect = () => {
           {/* Hero Image */}
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&h=500&fit=crop&crop=entropy"
+              src={e1}
               alt="Field Sales Team"
               className="w-full rounded-3xl shadow-2xl"
             />
@@ -474,7 +475,7 @@ const EmployeeConnect = () => {
 
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=400&fit=crop&crop=entropy"
+                src={e1}
                 alt="Route Optimization Dashboard"
                 className="rounded-3xl shadow-2xl w-full"
               />

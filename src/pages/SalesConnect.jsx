@@ -22,6 +22,8 @@ import {
 } from "lucide-react";
 import fq from "../assets/faqs.jpg";
 import glass from "@/assets/glasslogo.png";
+import s1 from "@/assets/sales1.png";
+import s2 from "@/assets/sales2.png";
 
 const SalesConnect = () => {
   const [openFaq, setOpenFaq] = useState(null);
@@ -201,11 +203,11 @@ const SalesConnect = () => {
 
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=entropy"
+                src={s1}
                 alt="Sales Dashboard Analytics"
                 className="rounded-2xl shadow-2xl w-full"
               />
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg border">
+              <div className="absolute -bottom-7 -right-6 bg-white p-6 rounded-xl shadow-lg border">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                     <TrendingUp className="w-6 h-6 text-green-600" />
@@ -290,13 +292,13 @@ const SalesConnect = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=entropy"
+                src={s2}
                 alt="Analytics Dashboard"
                 className="rounded-2xl shadow-xl w-full"
               />
-              <div className="absolute top-6 right-6 bg-white p-4 rounded-lg shadow-lg">
+              <div className="absolute top-6 right-6 bg-white p-4 rounded-lg shadow-lg border flex items-baseline space-x-4">
                 <div className="flex items-center space-x-2">
-                  <PieChart className="w-5 h-5 text-blue-600" />
+                  <PieChart className="w-5 h-2 text-blue-600" />
                   <span className="text-sm font-medium">Live Data</span>
                 </div>
               </div>

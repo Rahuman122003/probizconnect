@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Users, ShoppingBag, Award, Eye, TrendingUp, Handshake, Target, Gift, Zap, ArrowRight, CheckCircle, Star, Crown, Heart, DollarSign, ChevronDown, ChevronUp, Building, UserPlus, BarChart3, MessageCircle } from 'lucide-react';
 import fq from '../assets/faqs.jpg';
 import glass from "@/assets/glasslogo.png";
+import p1 from "@/assets/partner1.webp";
 
 const PartnerConnect = () => {
     const [currentPartner, setCurrentPartner] = useState(0);
@@ -200,7 +201,7 @@ const PartnerConnect = () => {
                     {/* Hero Visual */}
                     <div className="relative">
                         <img
-                            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&h=500&fit=crop&crop=entropy"
+                            src={p1}
                             alt="Partner Network Collaboration"
                             className="w-full rounded-3xl shadow-2xl"
                         />

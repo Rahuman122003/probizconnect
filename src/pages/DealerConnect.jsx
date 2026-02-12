@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import fq from "../assets/faqs.jpg";
 import glass from "@/assets/glasslogo.png";
+import d1 from "@/assets/dealer1.png";
 
 const DealerConnect = () => {
   const [animatedElements, setAnimatedElements] = useState({});
@@ -263,7 +264,7 @@ const DealerConnect = () => {
           {/* Hero Image */}
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop&crop=entropy"
+              src={d1}
               alt="Dealer Network Management"
               className="w-full rounded-3xl shadow-2xl"
             />
