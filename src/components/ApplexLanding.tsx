@@ -34,7 +34,7 @@ import frame1 from "@/assets/side1.png";
 import glass from "@/assets/glasslogo.png";
 import frame3 from "@/assets/side2.png";
 import frame4 from "@/assets/frame 1.png";
-import frame5 from "@/assets/side3.png";
+import frame12 from "@/assets/foot12.jpeg";
 import dashboard from "@/assets/dashboard.png";
 import frame from "@/assets/dashboard-1.jpeg";
 import company1 from "@/assets/tally.png";
@@ -137,11 +137,7 @@ export function ApplexLanding() {
                       <p className="text-xs text-muted-foreground">Team discussions</p>
                     </div>
                   </div> */}
-                  <img
-                    src={frame1}
-                    alt="ProbizConnect Logo"
-                    className="w-80 h-80 xl:w-48 xl:h-48 mb-2 "
-                  />
+                  
                 </div>
 
                 <div className="hidden lg:block absolute -left-48 xl:-left-34 top-40 w-full xl:w-60 lg:w-60 transform -rotate-[10deg]">
@@ -172,7 +168,7 @@ export function ApplexLanding() {
                     </div>
                   </div> */}
                   <img
-                    src={frame3}
+                    src={glass}
                     alt="ProbizConnect Logo"
                     className="w-full h-full xl:w-full xl:h-full mb-2"
                   />
@@ -200,11 +196,6 @@ export function ApplexLanding() {
                     <p className="font-semibold text-xs xl:text-sm">4.9/5 Rating</p>
                     <p className="text-xs text-muted-foreground">User satisfaction</p>
                   </div> */}
-                  <img
-                    src={frame5}
-                    alt="Probiz Logo"
-                    className="w-full h-full xl:w-full xl:h-fullmb-2"
-                  />
                 </div>
               </div>
             </div>
@@ -694,7 +685,7 @@ export function ApplexLanding() {
             </p> */}
           </div>
           <img
-            src={frame}
+            src={frame12}
             alt="Explore"
             className="w-full animate-fade-in rounded-lg shadow-xl shadow-black"
           />

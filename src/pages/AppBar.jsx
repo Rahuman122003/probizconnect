@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 /*import logo from "@/assets/logo.png";*/
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo.png";
 import { Link, NavLink } from 'react-router-dom';
 import { Button } from "../components/ui/button";
 import { Menu, X } from 'lucide-react';
@@ -89,7 +89,7 @@ const AppBar = () => {
                 </div>
 
                   <NavLink
-                  to="https://blogify-module.vercel.app"
+                  to="https://dealerconnect.in/blog"
                   className={({ isActive }) =>
                     `${baseClasses} ${isActive ? "text-purple-400 font-semibold" : "hover:text-foreground"}`
                   }
