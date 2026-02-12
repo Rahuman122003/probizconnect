@@ -26,6 +26,7 @@ import {
 import fq from "../assets/faqs.jpg";
 import glass from "@/assets/glasslogo.png";
 import e1 from "@/assets/emp.png";
+import e2 from "@/assets/emp2.png";
 
 const EmployeeConnect = () => {
   const [currentFeature, setCurrentFeature] = useState(0);
@@ -277,7 +278,7 @@ const EmployeeConnect = () => {
           {/* Hero Image */}
           <div className="relative">
             <img
-              src={e1}
+              src={e2}
               alt="Field Sales Team"
               className="w-full rounded-3xl shadow-2xl"
             />
