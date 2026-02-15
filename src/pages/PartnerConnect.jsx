@@ -1,13 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { Users, ShoppingBag, Award, Eye, TrendingUp, Handshake, Target, Gift, Zap, ArrowRight, CheckCircle, Star, Crown, Heart, DollarSign, ChevronDown, ChevronUp, Building, UserPlus, BarChart3, MessageCircle } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { 
+  Users, ShoppingBag, Award, Eye, TrendingUp, Handshake, Target, Gift, Zap, ArrowRight, 
+  CheckCircle, Star, Crown, Heart, DollarSign, ChevronDown, ChevronUp, Building, UserPlus, 
+  BarChart3, MessageCircle, X   // <-- add this
+} from 'lucide-react';
+
 import fq from '../assets/faqs.jpg';
 import glass from "@/assets/glasslogo.png";
 import p1 from "@/assets/partner1.webp";
+import demoVideo from "@/assets/demo.mp4";
 
 const PartnerConnect = () => {
     const [currentPartner, setCurrentPartner] = useState(0);
     const [animatedCards, setAnimatedCards] = useState({});
     const [openFaq, setOpenFaq] = useState(null);
+        const [showVideo, setShowVideo] = useState(false);
+         const videoRef = useRef(null);
 
     const features = [
         {
@@ -136,6 +144,20 @@ const PartnerConnect = () => {
         return () => clearInterval(interval);
     }, []);
 
+    const openVideoModal = () => {
+        setShowVideo(true);
+        setTimeout(() => {
+            videoRef.current?.play();
+        }, 200);
+    };
+
+    const closeVideoModal = () => {
+        videoRef.current?.pause();
+        videoRef.current.currentTime = 0;
+        setShowVideo(false);
+    };
+
+
     const handleCardHover = (index) => {
         setAnimatedCards(prev => ({ ...prev, [index]: true }));
         setTimeout(() => {
@@ -149,6 +171,33 @@ const PartnerConnect = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+            
+            {/* ================= VIDEO MODAL ================= */}
+            {showVideo && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-lg">
+
+                    {/* Close Button */}
+                    <button
+                        onClick={closeVideoModal}
+                        className="absolute top-6 right-6 text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition"
+                    >
+                        <X size={28} />
+                    </button>
+
+                    {/* Video Container 9:16 */}
+                    <div className="w-[320px] sm:w-[360px] md:w-[420px] aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+
+                        <video
+                            ref={videoRef}
+                            src={demoVideo}
+                            className="w-full h-full object-cover"
+                            autoPlay
+                            controls
+                            playsInline
+                        />
+                    </div>
+                </div>
+            )}
             {/* Hero Section */}
             <section className="py-20 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto">
@@ -173,11 +222,14 @@ const PartnerConnect = () => {
                                     <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                                 </button>
                             </a>
-                            <a href="">
-                            <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl text-lg font-semibold hover:border-blue-500 hover:text-blue-600 transition-all duration-300">
-                                Explore Platform
-                            </button>
-                            </a>
+                            
+                            <button
+                            onClick={openVideoModal}
+                            className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl text-lg font-semibold hover:border-blue-500 hover:text-blue-600 transition"
+                        >
+                            Explore Platform
+                        </button>
+                            
                         </div>
                     </div>
 

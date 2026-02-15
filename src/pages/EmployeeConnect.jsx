@@ -280,7 +280,7 @@ const EmployeeConnect = () => {
               </a>
 
               <button
-                onClick={() => setShowVideo(true)}
+                onClick={() => setShowVideo(false)}
                 className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl text-lg font-semibold hover:border-indigo-500 hover:text-indigo-600 transition-all duration-300"
               >
                 See Demo

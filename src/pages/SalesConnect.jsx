@@ -186,7 +186,7 @@ const SalesConnect = () => {
                 </a>
 
                 <button
-                  onClick={() => setShowVideo(true)}
+                  onClick={() => setShowVideo(false)}
                   className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:border-blue-500 hover:text-blue-600"
                 >
                   Watch Demo
