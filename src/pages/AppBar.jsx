@@ -226,7 +226,7 @@ const AppBar = () => {
             </div>
 
                  <NavLink
-              to="/blogs"
+              to="https://dealerconnect.in/blog"
               className={({ isActive }) =>
                 `${baseClasses} ${
                   isActive
