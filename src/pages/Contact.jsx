@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { MapPin, Phone, Mail, MessageSquare, Send, CheckCircle, Sparkles, ArrowUpRight } from "lucide-react";
+import { MapPin, Phone, Mail, MessageSquare, Send, CheckCircle, Sparkles, ArrowUpRight, PinIcon, Locate, LocateOffIcon, Pin } from "lucide-react";
 import contact from "@/assets/contact.webp";
 import emailjs from "@emailjs/browser";
 
@@ -87,7 +87,7 @@ const Contact = () => {
           <h1 className="text-6xl lg:text-8xl font-black text-gray-900 mt-4">
             Let's
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
-              Create Magic
+              Connect!
             </span>
           </h1>
         </div>
@@ -198,16 +198,36 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Phone Card - Floating Style */}
+          <div className="lg:col-span-5 group">
+            <div className="relative h-full">
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-400 to-slate-600 rounded-3xl opacity-90"></div>
+              <div className="relative bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl p-8 h-full flex flex-col justify-center shadow-xl hover:shadow-2xl transition-all duration-300bg-gradient-to-br from-orange-400 to-red-500 rounded-3xl p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer">
+                <div className="text-white">
+                  <Phone className="w-12 h-12 mb-4 animate-pulse" />
+                  <h3 className="text-2xl font-bold mb-2">Call us</h3>
+                  <p className="text-green-100 mb-6 font-medium">+91 99000 29602, 
+                  +91 96631 77996, 
+                  +91 80152 86598</p>
+                 
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+         {/*  Phone Card - Floating Style 
           <div className="lg:col-span-3 group">
             <a href="tel:9900029602">
               <div className="bg-gradient-to-br from-orange-400 to-red-500 rounded-3xl p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer">
                 <Phone className="w-8 h-8 text-white mb-3" />
-                <p className="text-white/80 text-sm mb-1">Call us</p>
-                <p className="text-white font-bold text-lg"> +91 99000 29602</p>
+                <p className="text-white/80 text-sm mb-1 font-bold">Call us</p>
+                <p className="text-white font-medium text-lg"> 
+                  +91 99000 29602, 
+                  +91 96631 77996, 
+                  +91 80152 86598</p>
               </div>
             </a>
-          </div>
+          </div> */}
 
           {/* Email Card */}
           <div className="lg:col-span-3 group">
@@ -217,6 +237,15 @@ const Contact = () => {
               <p className="text-white font-bold text-sm">info@probizconnect.io</p>
             </div>
           </div>
+          
+          <div className="lg:col-span-3 group">
+            <div className="bg-gradient-to-br from-purple-500 to-violet-950 rounded-3xl p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+              <Pin className="w-8 h-8 text-white mb-3" />
+              <p className="text-white/80 text-sm mb-1">Location</p>
+              <p className="text-white font-bold text-sm">Call us or Email us to visit our office</p>
+            </div>
+          </div>
+          
 
         </div>
       </section>

@@ -358,7 +358,8 @@ const About = () => {
                   className="bg-white text-purple-700 hover:bg-gray-100 rounded-full px-8 py-4 text-lg font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                 >
                   <a
-                    href="https://dealerconnect.in/book-a-demo"
+                    /*href="/contact"*/
+                    href="#/contact"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -371,7 +372,7 @@ const About = () => {
                   className="border-2 border-white text-purple-700 hover:bg-white hover:text-purple-700 rounded-full px-8 py-4 text-lg font-bold transition-all duration-300"
                 >
                   <a
-                    href="https://dealerconnect.in/book-a-demo"
+                    href="#/features/sales-connect"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

@@ -22,16 +22,20 @@ import {
   Route,
   Database,
   Headphones,
+  X,
 } from "lucide-react";
+
 import fq from "../assets/faqs.jpg";
 import glass from "@/assets/glasslogo.png";
 import e1 from "@/assets/emp.png";
 import e2 from "@/assets/emp2.png";
+import demoVideo from "@/assets/demo.mp4";
 
 const EmployeeConnect = () => {
   const [currentFeature, setCurrentFeature] = useState(0);
   const [animatedCards, setAnimatedCards] = useState({});
   const [openFaq, setOpenFaq] = useState(null);
+  const [showVideo, setShowVideo] = useState(false);
 
   const features = [
     {
@@ -191,6 +195,14 @@ const EmployeeConnect = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === "Escape") setShowVideo(false);
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, []);
+
   const handleCardHover = (index) => {
     setAnimatedCards((prev) => ({ ...prev, [index]: true }));
     setTimeout(() => {
@@ -204,7 +216,32 @@ const EmployeeConnect = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-purple-50">
-      {/* Hero Section */}
+
+      {showVideo && (
+        <div
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center"
+          onClick={() => setShowVideo(false)}
+        >
+          <div className="relative" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setShowVideo(false)}
+              className="absolute -top-12 right-0 text-white hover:text-gray-300"
+            >
+              <X size={32} />
+            </button>
+
+            <div className="w-[320px] sm:w-[360px] md:w-[400px] aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-2xl">
+              <video
+                src={demoVideo}
+                controls
+                autoPlay
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -212,6 +249,7 @@ const EmployeeConnect = () => {
               <Briefcase className="w-4 h-4 mr-2" />
               Field Sales & Distribution Employee Empowerment
             </div>
+
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
               Empower Your
               <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
@@ -220,6 +258,7 @@ const EmployeeConnect = () => {
               </span>
               to Excel
             </h1>
+
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
               In the fast-paced world of sales, your employees are the frontline
               representatives of your brand. We recognize the critical role they
@@ -227,6 +266,7 @@ const EmployeeConnect = () => {
               relationships. Equip your team with the tools and technology they
               need to excel.
             </p>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
                 href="https://dealerconnect.in/book-a-demo/ola/services/consultation"
@@ -238,15 +278,13 @@ const EmployeeConnect = () => {
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </button>
               </a>
-              <a
-                href=""
-                target="_blank"
-                rel="noopener noreferrer"
+
+              <button
+                onClick={() => setShowVideo(true)}
+                className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl text-lg font-semibold hover:border-indigo-500 hover:text-indigo-600 transition-all duration-300"
               >
-                <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl text-lg font-semibold hover:border-indigo-500 hover:text-indigo-600 transition-all duration-300">
-                  See Demo
-                </button>
-              </a>
+                See Demo
+              </button>
             </div>
           </div>
 
@@ -409,11 +447,11 @@ const EmployeeConnect = () => {
 
                   {/* Action Button */}
                   <div className="mt-8">
-                    <button
+                    {/*<button
                       className={`px-6 py-2 bg-gradient-to-r ${feature.gradient} text-white rounded-full text-sm font-semibold opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:shadow-xl`}
                     >
                       Learn More
-                    </button>
+                    </button>*/}
                   </div>
                 </div>
               </div>

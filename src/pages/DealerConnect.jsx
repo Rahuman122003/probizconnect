@@ -395,11 +395,11 @@ const DealerConnect = () => {
 
                   {/* Action Button */}
                   <div className="mt-8">
-                    <button
+                    {/*<button
                       className={`px-6 py-2 bg-gradient-to-r ${feature.gradient} text-white rounded-full text-sm font-semibold opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:shadow-xl`}
                     >
                       Learn More
-                    </button>
+                    </button>*/}
                   </div>
                 </div>
               </div>
