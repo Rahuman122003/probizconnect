@@ -242,7 +242,7 @@ const Contact = () => {
             <div className="bg-gradient-to-br from-purple-500 to-violet-950 rounded-3xl p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <Pin className="w-8 h-8 text-white mb-3" />
               <p className="text-white/80 text-sm mb-1">Location</p>
-              <p className="text-white font-bold text-sm">Call us or Email us to visit our office</p>
+              <p className="text-white font-bold text-sm">Bengaluru, Chennai and Coimbatore.</p>
             </div>
           </div>
           
