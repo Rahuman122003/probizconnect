@@ -7,7 +7,7 @@ import {
 
 import fq from '../assets/faqs.jpg';
 import glass from "@/assets/glasslogo.png";
-import p1 from "@/assets/partner1.webp";
+import p1 from "@/assets/pcpg.png";
 import demoVideo from "@/assets/demo.mp4";
 
 const PartnerConnect = () => {

@@ -27,7 +27,7 @@ import {
 
 import fq from "../assets/faqs.jpg";
 import glass from "@/assets/glasslogo.png";
-import e1 from "@/assets/emp.png";
+import e1 from "@/assets/ecpg.png";
 import e2 from "@/assets/emp2.png";
 import demoVideo from "@/assets/demo.mp4";
 

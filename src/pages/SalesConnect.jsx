@@ -23,14 +23,14 @@ import {
 } from "lucide-react";
 import fq from "../assets/faqs.jpg";
 import glass from "@/assets/glasslogo.png";
-import s1 from "@/assets/sales1.png";
+import s1 from "@/assets/scpg.png";
 import s2 from "@/assets/sales2.png";
 import demoVideo from "@/assets/demo.mp4"; // demo video
 
 const SalesConnect = () => {
   const [openFaq, setOpenFaq] = useState(null);
   const [showVideo, setShowVideo] = useState(false); // popup state
-  const names = "surya";
+  const names = "blyn";
 
   const features = [
     {

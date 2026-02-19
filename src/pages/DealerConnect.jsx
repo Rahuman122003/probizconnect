@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import fq from "../assets/faqs.jpg";
 import glass from "@/assets/glasslogo.png";
-import d1 from "@/assets/dealer1.png";
+import d1 from "@/assets/dcpg.png";
 
 const DealerConnect = () => {
   const [animatedElements, setAnimatedElements] = useState({});
