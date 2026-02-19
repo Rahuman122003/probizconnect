@@ -234,7 +234,7 @@ const Contact = () => {
             <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <Mail className="w-8 h-8 text-white mb-3" />
               <p className="text-white/80 text-sm mb-1">Email</p>
-              <p className="text-white font-bold text-sm">info@probizconnect.io</p>
+              <p className="text-white font-bold text-sm">info@dealerconnect.in</p>
             </div>
           </div>
           

@@ -204,7 +204,7 @@ export function ApplexLanding() {
       </div>
 
       {/* Features Section */}
-      <section className="px-4 sm:px-6 py-12 sm:py-16 lg:py-20 bg-white">
+      {/*<section className="px-4 sm:px-6 py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16 animate-slide-up">
             <h2 className="text-2xl sm:text-xl md:text-xl lg:text-2xl xl:text-3xl font-bold text-foreground mb-4 sm:mb-6 leading-tight px-2">
@@ -217,7 +217,7 @@ export function ApplexLanding() {
           </div>
 
           <div className="space-y-6 sm:space-y-8">
-            {/* First Row - Straight */}
+            {/* First Row - Straight 
             <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto">
               <Link to="/features/sales-connect" className="block">
                 <FeatureCard
@@ -238,7 +238,7 @@ export function ApplexLanding() {
               </Link>
             </div>
 
-            {/* Second Row - Shuffled/Offset */}
+            {/* Second Row - Shuffled/Offset 
             <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto lg:ml-16">
               <Link to="/features/employee-connect" className="block">
                 <FeatureCard
@@ -270,7 +270,103 @@ export function ApplexLanding() {
             </div>
           </div>
         </div>
+      </section>*/}
+       {/* Recent Articles */}
+      <section className="px-4 sm:px-6 py-12 sm:py-16 lg:py-20 bg-gradient-card">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16 animate-slide-up">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6">
+              GAIN 360° - Visibility & Control
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
+              Stay updated with industry news, tips, and the latest productivity
+              workflow optimization strategies.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+            {[
+              {
+                title: "Sales Connect",
+                excerpt:
+                  "We understand the challenges brands face in sales and distribution management. Our comprehensive solutions streamline operations and increase revenue with real-time order processing, inventory tracking, performance analytics, incentive management, seamless communication, route optimisation, and customisable stakeholder access.",
+                date: "November 2022",
+                color: "from-purple-500 to-purple-700",
+                icon: <TrendingUp className="w-8 h-8" />,
+              },
+              {
+                title: "Dealer Connect",
+                excerpt:
+                  "A Dealer & Distributor Management platform streamlines order processing, inventory tracking, performance analysis, and communication for managing your network. Probiz Connect provides detailed analytics and reports to identify top-performing dealers, enabling you to reward and motivate your dealer, distribution and retailer network.",
+                date: "November 2022",
+                color: "from-purple-500 to-purple-700",
+                icon: <Users className="w-8 h-8" />,
+              },
+              {
+                title: "Employee Connect",
+                excerpt:
+                  "At Probiz Connect, we understand the vital role field sales and distribution teams play in boosting revenue and fostering lasting customer relationships. That's why we've created a comprehensive empowerment solution that equips your team with the tools and technology to excel, while providing powerful reporting tools for valuable sales and revenue insights.",
+                date: "November 2022",
+                color: "from-purple-500 to-purple-700",
+                icon: <Briefcase className="w-8 h-8" />,
+              },
+              {
+                title: "Partner Connect",
+                excerpt:
+                  "By leveraging influencers and rewarding loyalty programs, your brand can excel in a competitive market and leave a lasting impression on customers and partners.",
+                date: "November 2022",
+                color: "from-purple-500 to-purple-700",
+                icon: <Handshake className="w-8 h-8" />,
+              },
+              {
+                title: "Reward Schemes",
+                excerpt:
+                  "You can design rewards that match your business goals, choosing between points-based rewards or instant cash incentives according to your partner engagement strategy.",
+                date: "November 2022",
+                color: "from-purple-500 to-purple-700",
+                icon: <Gift className="w-8 h-8" />,
+              },
+              {
+                title: "Loyalty Program",
+                excerpt:
+                  "Easily establish a brand loyalty program for your partners to strengthen your market presence. Reward points for actions like scanning coupons inside products.",
+                date: "November 2022",
+                color: "from-purple-500 to-purple-700",
+                icon: <Award className="w-8 h-8" />,
+              },
+            ].map((article, index) => (
+              <Card
+                key={index}
+                className="p-4 sm:p-6 bg-card backdrop-blur-sm border-0 shadow-card hover:shadow-floating transition-all duration-300 hover:-translate-y-1 animate-fade-in group cursor-pointer hover:shadow-[0_8px_30px_rgb(219,234,254,0.6)]"
+              >
+                {/* Icon Header */}
+                <div className="mb-4 sm:mb-6">
+                  <div
+                    className={`w-16 h-16 bg-gradient-to-r ${article.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg`}
+                  >
+                    <div className="text-white">{article.icon}</div>
+                  </div>
+                </div>
+
+                <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2 sm:mb-3 group-hover:text-primary transition-colors">
+                  {article.title}
+                </h3>
+                <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4 leading-relaxed">
+                  {article.excerpt}
+                </p>
+                <div
+                  className={`mt-6 w-full h-1 bg-gradient-to-r ${article.color} rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}
+                ></div>
+                {/* <div className="flex items-center text-primary font-medium group-hover:translate-x-2 transition-transform text-sm sm:text-base mt-2">
+                  Read more
+                  <ArrowRight className="w-3 sm:w-4 h-3 sm:h-4 ml-2" />
+                </div> */}
+              </Card>
+            ))}
+          </div>
+        </div>
       </section>
+
 
       <section className="bg-gradient-to-b from-[#dbeafe] via-[#eef2ff] to-[#fff1f2] py-12 sm:py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -578,102 +674,7 @@ export function ApplexLanding() {
         </div>
       </section>
 
-      {/* Recent Articles */}
-      <section className="px-4 sm:px-6 py-12 sm:py-16 lg:py-20 bg-gradient-card">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16 animate-slide-up">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6">
-              GAIN 360° - Visibility & Control
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-              Stay updated with industry news, tips, and the latest productivity
-              workflow optimization strategies.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            {[
-              {
-                title: "Sales Connect",
-                excerpt:
-                  "We understand the challenges brands face in sales and distribution management. Our comprehensive solutions streamline operations and increase revenue with real-time order processing, inventory tracking, performance analytics, incentive management, seamless communication, route optimisation, and customisable stakeholder access.",
-                date: "November 2022",
-                color: "from-purple-500 to-purple-700",
-                icon: <TrendingUp className="w-8 h-8" />,
-              },
-              {
-                title: "Dealer Connect",
-                excerpt:
-                  "A Dealer & Distributor Management platform streamlines order processing, inventory tracking, performance analysis, and communication for managing your network. Probiz Connect provides detailed analytics and reports to identify top-performing dealers, enabling you to reward and motivate your dealer, distribution and retailer network.",
-                date: "November 2022",
-                color: "from-purple-500 to-purple-700",
-                icon: <Users className="w-8 h-8" />,
-              },
-              {
-                title: "Employee Connect",
-                excerpt:
-                  "At Probiz Connect, we understand the vital role field sales and distribution teams play in boosting revenue and fostering lasting customer relationships. That's why we've created a comprehensive empowerment solution that equips your team with the tools and technology to excel, while providing powerful reporting tools for valuable sales and revenue insights.",
-                date: "November 2022",
-                color: "from-purple-500 to-purple-700",
-                icon: <Briefcase className="w-8 h-8" />,
-              },
-              {
-                title: "Partner Connect",
-                excerpt:
-                  "By leveraging influencers and rewarding loyalty programs, your brand can excel in a competitive market and leave a lasting impression on customers and partners.",
-                date: "November 2022",
-                color: "from-purple-500 to-purple-700",
-                icon: <Handshake className="w-8 h-8" />,
-              },
-              {
-                title: "Reward Schemes",
-                excerpt:
-                  "You can design rewards that match your business goals, choosing between points-based rewards or instant cash incentives according to your partner engagement strategy.",
-                date: "November 2022",
-                color: "from-purple-500 to-purple-700",
-                icon: <Gift className="w-8 h-8" />,
-              },
-              {
-                title: "Loyalty Program",
-                excerpt:
-                  "Easily establish a brand loyalty program for your partners to strengthen your market presence. Reward points for actions like scanning coupons inside products.",
-                date: "November 2022",
-                color: "from-purple-500 to-purple-700",
-                icon: <Award className="w-8 h-8" />,
-              },
-            ].map((article, index) => (
-              <Card
-                key={index}
-                className="p-4 sm:p-6 bg-card backdrop-blur-sm border-0 shadow-card hover:shadow-floating transition-all duration-300 hover:-translate-y-1 animate-fade-in group cursor-pointer hover:shadow-[0_8px_30px_rgb(219,234,254,0.6)]"
-              >
-                {/* Icon Header */}
-                <div className="mb-4 sm:mb-6">
-                  <div
-                    className={`w-16 h-16 bg-gradient-to-r ${article.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg`}
-                  >
-                    <div className="text-white">{article.icon}</div>
-                  </div>
-                </div>
-
-                <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2 sm:mb-3 group-hover:text-primary transition-colors">
-                  {article.title}
-                </h3>
-                <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4 leading-relaxed">
-                  {article.excerpt}
-                </p>
-                <div
-                  className={`mt-6 w-full h-1 bg-gradient-to-r ${article.color} rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}
-                ></div>
-                {/* <div className="flex items-center text-primary font-medium group-hover:translate-x-2 transition-transform text-sm sm:text-base mt-2">
-                  Read more
-                  <ArrowRight className="w-3 sm:w-4 h-3 sm:h-4 ml-2" />
-                </div> */}
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
+     
       <section className="bg-gradient-to-b from-[#dbeafe] via-[#eef2ff] to-[#fff1f2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20 ">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16 animate-slide-up">
