@@ -27,8 +27,8 @@ import {
 
 import fq from "../assets/faqs.jpg";
 import glass from "@/assets/glasslogo.png";
-import e1 from "@/assets/ecpg.png";
-import e2 from "@/assets/emp2.png";
+import e2 from "@/assets/ecpg.png";
+import e1 from "@/assets/emp2.png";
 import demoVideo from "@/assets/demo.mp4";
 
 const EmployeeConnect = () => {
@@ -320,16 +320,22 @@ const EmployeeConnect = () => {
               alt="Field Sales Team"
               className="w-full rounded-3xl shadow-2xl"
             />
+            <div className="absolute top-6 right-6 bg-gray-500 p-4 rounded-xl shadow-lg">
+                <div className="flex items-center space-x-2">
+                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-sm font-medium text-white">Live Tracking</span>
+                </div>
+              </div>
             <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl border hidden lg:block">
               <div className="flex items-center space-x-4">
                 <div className="w-16 h-16 bg-gradient-to-r from-indigo-400 to-purple-500 rounded-full flex items-center justify-center">
-                  <Users className="w-8 h-8 text-white" />
+                  <Clock className="w-8 h-8 text-white" />
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-gray-900">
-                    Empowered
+                    40%
                   </div>
-                  <div className="text-gray-600">Sales Force</div>
+                  <div className="text-gray-600">Time Saved</div>
                 </div>
               </div>
             </div>
@@ -524,12 +530,19 @@ const EmployeeConnect = () => {
                   <span className="text-sm font-medium">Live Tracking</span>
                 </div>
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl border">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-gray-900">40%</div>
-                  <div className="text-sm text-gray-600">Time Saved</div>
+              <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl border hidden lg:block">
+              <div className="flex items-center space-x-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-indigo-400 to-purple-500 rounded-full flex items-center justify-center">
+                  <Users className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-gray-900">
+                    Empowered
+                  </div>
+                  <div className="text-gray-600">Sales Force</div>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>
