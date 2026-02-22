@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Users,
   Package,
@@ -18,15 +18,19 @@ import {
   ChevronDown,
   ChevronUp,
   Network,
+   X, 
 } from "lucide-react";
 import fq from "../assets/faqs.jpg";
 import glass from "@/assets/glasslogo.png";
 import d1 from "@/assets/dcpg.png";
+import demoVideo from "@/assets/dcdemo.mp4";
 
 const DealerConnect = () => {
   const [animatedElements, setAnimatedElements] = useState({});
   const [currentStat, setCurrentStat] = useState(0);
   const [openFaq, setOpenFaq] = useState(null);
+   const [showVideo, setShowVideo] = useState(false);
+           const videoRef = useRef(null);
 
   const features = [
     {
@@ -184,6 +188,19 @@ const DealerConnect = () => {
     return () => clearInterval(interval);
   }, []);
 
+      const openVideoModal = () => {
+        setShowVideo(true);
+        setTimeout(() => {
+            videoRef.current?.play();
+        }, 200);
+    };
+
+    const closeVideoModal = () => {
+        videoRef.current?.pause();
+        videoRef.current.currentTime = 0;
+        setShowVideo(false);
+    };
+
   const handleElementHover = (id) => {
     setAnimatedElements((prev) => ({ ...prev, [id]: true }));
     setTimeout(() => {
@@ -197,6 +214,33 @@ const DealerConnect = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+      
+      {/* ================= VIDEO MODAL ================= */}
+                  {showVideo && (
+                      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-lg">
+      
+                          {/* Close Button */}
+                          <button
+                              onClick={closeVideoModal}
+                              className="absolute top-6 right-6 text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition"
+                          >
+                              <X size={28} />
+                          </button>
+      
+                          {/* Video Container 9:16 */}
+                          <div className="w-[320px] sm:w-[360px] md:w-[420px] aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+      
+                              <video
+                                  ref={videoRef}
+                                  src={demoVideo}
+                                  className="w-full h-full object-cover"
+                                  autoPlay
+                                  controls
+                                  playsInline
+                              />
+                          </div>
+                      </div>
+                  )}
       {/* Hero Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto">
@@ -230,11 +274,13 @@ const DealerConnect = () => {
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </button>
               </a>
-              <a href="" target="_blank" rel="noopener noreferrer">
-                <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl text-lg font-semibold hover:border-blue-500 hover:text-blue-600 transition-all duration-300">
+              
+                <button 
+                onClick={openVideoModal}
+                className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl text-lg font-semibold hover:border-blue-500 hover:text-blue-600 transition-all duration-300">
                   View Demo
                 </button>
-              </a>
+              
             </div>
           </div>
 

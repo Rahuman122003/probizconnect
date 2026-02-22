@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Users,
   MapPin,
@@ -29,13 +29,14 @@ import fq from "../assets/faqs.jpg";
 import glass from "@/assets/glasslogo.png";
 import e2 from "@/assets/ecpg.png";
 import e1 from "@/assets/emp2.png";
-import demoVideo from "@/assets/demo.mp4";
+import demoVideo from "@/assets/empdemo.mp4";
 
 const EmployeeConnect = () => {
   const [currentFeature, setCurrentFeature] = useState(0);
   const [animatedCards, setAnimatedCards] = useState({});
   const [openFaq, setOpenFaq] = useState(null);
   const [showVideo, setShowVideo] = useState(false);
+   const videoRef = useRef(null);
 
   const features = [
     {
@@ -195,13 +196,18 @@ const EmployeeConnect = () => {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    const handleEsc = (e) => {
-      if (e.key === "Escape") setShowVideo(false);
+    const openVideoModal = () => {
+        setShowVideo(true);
+        setTimeout(() => {
+            videoRef.current?.play();
+        }, 200);
     };
-    window.addEventListener("keydown", handleEsc);
-    return () => window.removeEventListener("keydown", handleEsc);
-  }, []);
+
+    const closeVideoModal = () => {
+        videoRef.current?.pause();
+        videoRef.current.currentTime = 0;
+        setShowVideo(false);
+    };
 
   const handleCardHover = (index) => {
     setAnimatedCards((prev) => ({ ...prev, [index]: true }));
@@ -217,31 +223,32 @@ const EmployeeConnect = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-purple-50">
 
-      {showVideo && (
-        <div
-          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center"
-          onClick={() => setShowVideo(false)}
-        >
-          <div className="relative" onClick={(e) => e.stopPropagation()}>
-            <button
-              onClick={() => setShowVideo(false)}
-              className="absolute -top-12 right-0 text-white hover:text-gray-300"
-            >
-              <X size={32} />
-            </button>
-
-            <div className="w-[320px] sm:w-[360px] md:w-[400px] aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-2xl">
-              <video
-                src={demoVideo}
-                controls
-                autoPlay
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      )}
-
+                 {/* ================= VIDEO MODAL ================= */}
+                 {showVideo && (
+                     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-lg">
+     
+                         {/* Close Button */}
+                         <button
+                             onClick={closeVideoModal}
+                             className="absolute top-6 right-6 text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition"
+                         >
+                             <X size={28} />
+                         </button>
+     
+                         {/* Video Container 9:16 */}
+                         <div className="w-[320px] sm:w-[360px] md:w-[420px] aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+     
+                             <video
+                                 ref={videoRef}
+                                 src={demoVideo}
+                                 className="w-full h-full object-cover"
+                                 autoPlay
+                                 controls
+                                 playsInline
+                             />
+                         </div>
+                     </div>
+                 )}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -280,7 +287,7 @@ const EmployeeConnect = () => {
               </a>
 
               <button
-                onClick={() => setShowVideo(false)}
+                onClick={openVideoModal}
                 className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl text-lg font-semibold hover:border-indigo-500 hover:text-indigo-600 transition-all duration-300"
               >
                 See Demo
