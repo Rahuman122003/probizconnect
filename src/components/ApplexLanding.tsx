@@ -36,7 +36,7 @@ import frame3 from "@/assets/side2.png";
 import frame4 from "@/assets/frame 1.png";
 import frame12 from "@/assets/foot12.jpeg";
 import dashboard from "@/assets/dashboard.png";
-import frame from "@/assets/homepg.png";
+import frame from "@/assets/homepage.png";
 import company1 from "@/assets/tally.png";
 import company2 from "@/assets/zoho.png";
 import company3 from "@/assets/amazon.svg";
