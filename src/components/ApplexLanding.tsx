@@ -278,10 +278,10 @@ export function ApplexLanding() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6">
               GAIN 360° - Visibility & Control
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
+            {/*<p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
               Stay updated with industry news, tips, and the latest productivity
               workflow optimization strategies.
-            </p>
+            </p>*/}
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">

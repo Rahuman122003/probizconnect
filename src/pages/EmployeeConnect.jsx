@@ -36,7 +36,7 @@ const EmployeeConnect = () => {
   const [animatedCards, setAnimatedCards] = useState({});
   const [openFaq, setOpenFaq] = useState(null);
   const [showVideo, setShowVideo] = useState(false);
-   const videoRef = useRef(null);
+  const videoRef = useRef(null);
 
   const features = [
     {
@@ -196,18 +196,18 @@ const EmployeeConnect = () => {
     return () => clearInterval(interval);
   }, []);
 
-    const openVideoModal = () => {
-        setShowVideo(true);
-        setTimeout(() => {
-            videoRef.current?.play();
-        }, 200);
-    };
+  const openVideoModal = () => {
+    setShowVideo(true);
+    setTimeout(() => {
+      videoRef.current?.play();
+    }, 200);
+  };
 
-    const closeVideoModal = () => {
-        videoRef.current?.pause();
-        videoRef.current.currentTime = 0;
-        setShowVideo(false);
-    };
+  const closeVideoModal = () => {
+    videoRef.current?.pause();
+    videoRef.current.currentTime = 0;
+    setShowVideo(false);
+  };
 
   const handleCardHover = (index) => {
     setAnimatedCards((prev) => ({ ...prev, [index]: true }));
@@ -222,33 +222,32 @@ const EmployeeConnect = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-purple-50">
+      {/* ================= VIDEO MODAL ================= */}
+      {showVideo && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-lg">
+          {/* Close Button */}
+          <button
+            onClick={closeVideoModal}
+            className="absolute top-6 right-6 text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition"
+          >
+            <X size={28} />
+          </button>
 
-                 {/* ================= VIDEO MODAL ================= */}
-                 {showVideo && (
-                     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-lg">
-     
-                         {/* Close Button */}
-                         <button
-                             onClick={closeVideoModal}
-                             className="absolute top-6 right-6 text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition"
-                         >
-                             <X size={28} />
-                         </button>
-     
-                         {/* Video Container 9:16 */}
-                         <div className="w-[320px] sm:w-[360px] md:w-[420px] aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-     
-                             <video
-                                 ref={videoRef}
-                                 src={demoVideo}
-                                 className="w-full h-full object-cover"
-                                 autoPlay
-                                 controls
-                                 playsInline
-                             />
-                         </div>
-                     </div>
-                 )}
+          {/* Video Container 9:16 */}
+          <div className="w-[320px] sm:w-[360px] md:w-[420px] aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+            <video
+              ref={videoRef}
+              src={demoVideo}
+              className="w-full h-full object-cover"
+              autoPlay
+              controls
+              playsInline
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Hero Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -328,20 +327,20 @@ const EmployeeConnect = () => {
               className="w-full rounded-3xl shadow-2xl"
             />
             <div className="absolute top-6 right-6 bg-gray-500 p-4 rounded-xl shadow-lg">
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-sm font-medium text-white">Live Tracking</span>
-                </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium text-white">
+                  Live Tracking
+                </span>
               </div>
+            </div>
             <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl border hidden lg:block">
               <div className="flex items-center space-x-4">
                 <div className="w-16 h-16 bg-gradient-to-r from-indigo-400 to-purple-500 rounded-full flex items-center justify-center">
                   <Clock className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-gray-900">
-                    40%
-                  </div>
+                  <div className="text-2xl font-bold text-gray-900">40%</div>
                   <div className="text-gray-600">Time Saved</div>
                 </div>
               </div>
@@ -538,18 +537,18 @@ const EmployeeConnect = () => {
                 </div>
               </div>
               <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl border hidden lg:block">
-              <div className="flex items-center space-x-4">
-                <div className="w-16 h-16 bg-gradient-to-r from-indigo-400 to-purple-500 rounded-full flex items-center justify-center">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-gray-900">
-                    Empowered
+                <div className="flex items-center space-x-4">
+                  <div className="w-16 h-16 bg-gradient-to-r from-indigo-400 to-purple-500 rounded-full flex items-center justify-center">
+                    <Users className="w-8 h-8 text-white" />
                   </div>
-                  <div className="text-gray-600">Sales Force</div>
+                  <div>
+                    <div className="text-2xl font-bold text-gray-900">
+                      Empowered
+                    </div>
+                    <div className="text-gray-600">Sales Force</div>
+                  </div>
                 </div>
               </div>
-            </div>
             </div>
           </div>
         </div>
