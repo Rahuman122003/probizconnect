@@ -1,5 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import { Users, Shield, Lock, Settings, Key, UserCheck, Layers, GitBranch, Database, Cloud, ArrowRight, CheckCircle, Zap, Eye, ChevronDown, ChevronUp, Link2, Box, Network, Server, Workflow } from 'lucide-react';
+import { Reveal } from '@/components/Reveal';
+import tallyLogo from '../assets/tally.png';
+import zohoLogo from '../assets/zoho.png';
+import sapLogo from '../assets/sap.svg';
+import quickbookLogo from '../assets/quickbook.svg';
+import freshworksLogo from '../assets/freshworks.svg';
+import kekaLogo from '../assets/keka.svg';
+import razorpayLogo from '../assets/razorpay.svg';
+import paytmLogo from '../assets/paytm.png';
+import indiamartLogo from '../assets/indiamart.png';
+import justdialLogo from '../assets/justdial.svg';
+import whatsappLogo from '../assets/whatsapp.svg';
+import amazonLogo from '../assets/amazon.svg';
+import greyturLogo from '../assets/greytur.png';
+
+const integrationLogos = [
+  { name: 'Tally', src: tallyLogo },
+  { name: 'Zoho', src: zohoLogo },
+  { name: 'SAP', src: sapLogo },
+  { name: 'QuickBooks', src: quickbookLogo },
+  { name: 'Freshworks', src: freshworksLogo },
+  { name: 'Keka', src: kekaLogo },
+  { name: 'Razorpay', src: razorpayLogo },
+  { name: 'Paytm', src: paytmLogo },
+  { name: 'IndiaMART', src: indiamartLogo },
+  { name: 'JustDial', src: justdialLogo },
+  { name: 'WhatsApp', src: whatsappLogo },
+  { name: 'Amazon', src: amazonLogo },
+  { name: 'Greytip', src: greyturLogo },
+];
 
 const Integration = () => {
   const [currentFeature, setCurrentFeature] = useState(0);
@@ -191,19 +221,16 @@ const Integration = () => {
             ))}
           </div>
 
-          {/* Hero Visual */}
-     
         </div>
       </section>
 
-     
       {/* Features Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <Reveal as="h2" className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               Platform Capabilities
-            </h2>
+            </Reveal>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive tools for user management, security, and seamless integrations
             </p>
@@ -269,9 +296,9 @@ const Integration = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <Reveal as="h2" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 leading-tight">
               Key Capabilities
-            </h2>
+            </Reveal>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Designed to empower businesses with sophisticated management tools
             </p>
@@ -301,10 +328,61 @@ const Integration = () => {
         </div>
       </section>
 
- 
+      {/* Integration Logos Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center px-4 py-2 bg-white rounded-full text-blue-700 text-sm font-medium mb-6 shadow-sm">
+              <Link2 className="w-4 h-4 mr-2" />
+              Trusted Integrations
+            </div>
+            <Reveal as="h2" className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+              Works With Your Favorite Tools
+            </Reveal>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Connect ProBizConnect seamlessly with the platforms your business already uses.
+            </p>
+          </div>
 
-    
-      
+          <div
+            className="logo-marquee group relative overflow-hidden"
+            style={{
+              maskImage:
+                'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+              WebkitMaskImage:
+                'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+            }}
+          >
+            <div className="logo-marquee-track flex w-max items-center gap-16 py-8">
+              {[...integrationLogos, ...integrationLogos].map((logo, idx) => (
+                <img
+                  key={`${logo.name}-${idx}`}
+                  src={logo.src}
+                  alt={`${logo.name} logo`}
+                  loading="lazy"
+                  className="h-12 md:h-14 w-auto object-contain shrink-0 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition duration-300"
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <style>{`
+          @keyframes logo-marquee-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .logo-marquee-track {
+            animation: logo-marquee-scroll 40s linear infinite;
+          }
+          .logo-marquee:hover .logo-marquee-track {
+            animation-play-state: paused;
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .logo-marquee-track { animation: none; }
+          }
+        `}</style>
+      </section>
     </div>
   );
 };

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { MapPin, Phone, Mail, MessageSquare, Send, CheckCircle, Sparkles, ArrowUpRight, PinIcon, Locate, LocateOffIcon, Pin } from "lucide-react";
 import contact from "@/assets/contact.webp";
-import emailjs from "@emailjs/browser";
+import mascot from "@/assets/mascot.png";
+import { Reveal } from "@/components/Reveal";
 
 const Contact = () => {
 
@@ -80,17 +81,25 @@ const Contact = () => {
 
       <section className="relative px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
 
+        {/* Floating mascot — top right accent */}
+        <img
+          src={mascot}
+          alt=""
+          aria-hidden="true"
+          className="hidden md:block pointer-events-none select-none absolute top-6 right-6 lg:right-16 w-28 lg:w-40 animate-float-soft drop-shadow-2xl z-10"
+        />
+
         {/* Title */}
-        <div className="relative z-10 mb-16 text-center lg:text-left lg:ml-20">
+        <Reveal className="relative z-10 mb-16 text-center lg:text-left lg:ml-20">
           <Sparkles className="w-5 h-5 text-purple-500 animate-pulse inline mr-2" />
-          <span className="text-sm font-semibold text-gray-600 uppercase">Get Connected</span>
-          <h1 className="text-6xl lg:text-8xl font-black text-gray-900 mt-4">
+          <span className="text-sm font-semibold text-gray-600 uppercase tracking-[0.2em]">Get Connected</span>
+          <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black text-gray-900 mt-4 leading-none">
             Let's
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
               Connect!
             </span>
           </h1>
-        </div>
+        </Reveal>
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6">
 

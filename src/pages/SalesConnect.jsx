@@ -21,11 +21,12 @@ import {
   PieChart,
   X,
 } from "lucide-react";
-import fq from "../assets/faqs.jpg";
-import glass from "@/assets/glasslogo.png";
+import fq from "../assets/mascot1.png";
+import glass from "@/assets/pclogo.png";
 import s1 from "@/assets/scpg.png";
 import s2 from "@/assets/sales2.png";
 import demoVideo from "@/assets/demo.mp4"; // demo video
+import { Reveal, Stagger, StaggerItem } from "@/components/Reveal";
 
 const SalesConnect = () => {
   const [openFaq, setOpenFaq] = useState(null);
@@ -178,7 +179,7 @@ const SalesConnect = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="https://dealerconnect.in/book-a-demo" target="_blank" rel="noopener noreferrer">
+                <a href="#/book-a-demo" target="_blank" rel="noopener noreferrer">
                   <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg text-lg font-semibold flex items-center justify-center">
                     Get Started Today
                     <ArrowRight className="ml-2 w-5 h-5" />
@@ -233,15 +234,16 @@ const SalesConnect = () => {
                   {/* Features Section */}
                   <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
                     <div className="max-w-7xl mx-auto">
-                      <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                      <Reveal className="text-center mb-16">
+                        <span className="inline-block text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-blue-600 mb-3">Features</span>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
                           Comprehensive Sales Solutions
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                           Streamline operations and boost revenue with our powerful suite of
                           integrated tools
                         </p>
-                      </div>
+                      </Reveal>
             
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {features.map((feature, index) => (
@@ -363,21 +365,23 @@ const SalesConnect = () => {
             
                   {/* FAQ Section */}
                   <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-                    <div className="text-center mb-16">
-                      <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                    <Reveal className="text-center mb-16">
+                      <span className="inline-block text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-blue-600 mb-3">FAQ</span>
+                      <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 leading-tight">
                         Frequently Asked Questions
                       </h2>
                       <p className="text-xl text-gray-600">
                         Get answers to common questions about Sales Connect
                       </p>
-                    </div>
+                    </Reveal>
                     <div className="flex">
-                      <div className="">
+                      <div className="relative hidden lg:block">
                         <img
                           src={fq}
-                          alt="FAQs Background"
-                          className="w-96 h-96 object-contain rounded-xl mr-12 hidden lg:block"
+                          alt="Got a question? Our mascot is here to help"
+                          className="w-72 xl:w-80 object-contain animate-float-soft drop-shadow-[0_25px_35px_rgba(124,58,237,0.25)] select-none"
                         />
+                        <span className="mascot-ground" />
                       </div>
                       <div className="max-w-4xl mx-auto">
                         <div className="space-y-4">
@@ -426,7 +430,7 @@ const SalesConnect = () => {
                         <img
                           src={glass}
                           alt="Team collaboration"
-                          className="w-32 h-32 rounded-full mx-auto mb-2 border-2 border-white shadow-lg"
+                          className="w-20 h-20 rounded-full mx-auto mb-2 border-2 border-white shadow-lg"
                         />
                       </div>
                       <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -439,7 +443,7 @@ const SalesConnect = () => {
                       </p>
                       <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a
-                          href="https://dealerconnect.in/book-a-demo"
+                          href="#/book-a-demo"
                           target="_blank"
                           rel="noopener noreferrer"
                         >

@@ -13,7 +13,9 @@ import {
 } from "lucide-react";
 import profile1 from "../assets/profile1.png";
 import profile2 from "../assets/profile2.png";
-import glass from "@/assets/glasslogo.png";
+import glass from "@/assets/pclogo.png";
+import mascot from "@/assets/mascot.png";
+import { Reveal } from "@/components/Reveal";
 
 const About = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -152,15 +154,27 @@ const About = () => {
             </div>
 
             {/* Right Side - Contact Card */}
-            <div className="animate-slide-in-right mb-8">
-              <div className="bg-white rounded-3xl shadow-2xl p-8 lg:p-12 transform hover:scale-105 transition-all duration-500">
+            <div className="animate-slide-in-right mb-8 relative">
+              {/* Floating mascot — peeks above the card */}
+              <div
+                aria-hidden="true"
+                className="absolute -top-20 sm:-top-24 lg:-top-28 left-1/2 -translate-x-1/2 z-20 pointer-events-none"
+              >
+                <div className="absolute inset-0 -m-6 bg-gradient-to-br from-orange-300/50 via-pink-300/40 to-purple-300/40 blur-3xl rounded-full"></div>
+                <img
+                  src={mascot}
+                  alt="ProbizConnect mascot"
+                  className="relative w-36 sm:w-44 lg:w-52 animate-float-soft drop-shadow-[0_25px_35px_rgba(124,58,237,0.3)] select-none"
+                />
+              </div>
+
+              <div className="bg-white rounded-3xl shadow-2xl p-8 lg:p-12 pt-20 sm:pt-24 lg:pt-28 transform hover:scale-105 transition-all duration-500">
                 <div className="text-center mb-8">
-                  <div className="w-20 h-20 bg-gradient-to-r from-blue-400 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <img
-                     src={glass}
-                      alt="Team collaboration"
-                      />
-                  </div>
+                  <img
+                    src={glass}
+                    alt="ProbizConnect Logo"
+                    className="w-16 h-16 object-contain mx-auto mb-4 opacity-90"
+                  />
                   <h3 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-4">
                     Get in Touch
                   </h3>
@@ -177,7 +191,7 @@ const About = () => {
                     className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white rounded-xl py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     <a
-                      href="https://dealerconnect.in/book-a-demo"
+                      href="#/book-a-demo"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -202,9 +216,9 @@ const About = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+            <Reveal as="h2" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
               About Us
-            </h2>
+            </Reveal>
             <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>
           </div>
 

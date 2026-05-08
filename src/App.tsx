@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import ProxAssistant from "./components/ProxAssistant";
 
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -18,6 +19,7 @@ import EmployeeConnect from "./pages/EmployeeConnect.jsx";
 import PartnerConnect from "./pages/PartnerConnect.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import Integration from "./pages/Integration.jsx";
+import BookDemo from "./pages/BookDemo.jsx";
 
 
 const queryClient = new QueryClient();
@@ -51,6 +53,7 @@ const AnimatedRoutes = () => {
            <Route path="/features/employee-connect" element={<EmployeeConnect />} />
            <Route path="/features/partner-connect" element={<PartnerConnect />} />
             <Route path="/features/integrations" element={<Integration />} />
+           <Route path="/book-a-demo" element={<PageWrapper><BookDemo /></PageWrapper>} />
         <Route path="*" element={<PageWrapper><NotFound /></PageWrapper>} />
       </Routes>
     </AnimatePresence>
@@ -66,6 +69,7 @@ const App = () => (
         <ScrollToTop />
         <AppBar />
         <AnimatedRoutes />
+        <ProxAssistant />
       </Router>
     {/* </TooltipProvider> */}
   </QueryClientProvider>

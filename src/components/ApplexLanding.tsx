@@ -29,9 +29,9 @@ import heroMockup from "@/assets/center.png";
 import calendarMockup from "@/assets/calendar-mockup.jpg";
 import customerTestimonial from "@/assets/customer-testimonial.jpg";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/pclogo.png";
 import frame1 from "@/assets/side1.png";
-import glass from "@/assets/glasslogo.png";
+import glass from "@/assets/pclogo.png";
 import frame3 from "@/assets/side2.png";
 import frame4 from "@/assets/frame 1.png";
 import frame12 from "@/assets/foot12.jpeg";
@@ -51,6 +51,8 @@ import company11 from "@/assets/sap.svg";
 import company12 from "@/assets/whatsapp.svg";
 import company13 from "@/assets/paytm.png";
 import home from "@/assets/home.png";
+import mascot from "@/assets/mascot.png";
+import { Reveal, Stagger, StaggerItem } from "@/components/Reveal";
 
 export function ApplexLanding() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -85,29 +87,35 @@ export function ApplexLanding() {
                 </span>
               </h1>
 
-              <p className="text-semibold text-basesm:text-lg md:text-2xl mb-4">
+              <p className="font-semibold text-base sm:text-lg md:text-2xl mb-4">
                 {" "}
                 AI-Powered eB2B Cloud Platform for SME's
               </p>
-              <p className="text-base sm:text-lg md:text-1xl text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-4">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-4">
                 A software-as-a-service (SaaS) solution designed for consumer
                 goods brands of various sizes—micro, small, and medium—to
                 digitise, automate, optimise, and efficiently manage the
                 expansion of their business-to-business (B2B) sales operations
                 involving retailers, distributors, and sales teams.
               </p>
-              <h1 className="text-2xl sm:text-xl md:text-xl lg:text-2xl xl:text-3xl font-bold text-foreground mb-4 sm:mb-6 leading-tight px-2">
+              <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mb-4 sm:mb-6 leading-tight px-2">
                 {" "}
                 Carefully Crafted for SME's in India
               </h1>
+
+              <h3 className="text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl font-normal text-foreground mb-4 sm:mb-6 leading-tight px-2">
+                {" "}
+                Digitise . Automate . Optimise
+              </h3>
               {/*<div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-12 lg:mb-16 px-4">
+                Digitise . Automate . Optimise
                 <Button
                   asChild
                   size="lg"
                   className="bg-[#00143e] hover:opacity-90 rounded-full px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg flex items-center justify-center"
                 >
                   <a
-                    href="https://dealerconnect.in/book-a-demo"
+                    href="#/book-a-demo"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -118,12 +126,12 @@ export function ApplexLanding() {
             </div>
 
             {/* Hero Phone Mockup with Floating Cards */}
-            <div className="relative flex justify-center animate-bounce-in -mb-20 sm:-mb-32 lg:-mb-40">
-              <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
+            <div className="relative flex justify-center animate-bounce-in mt-8 sm:mt-12">
+              <div className="relative w-full max-w-[25rem] sm:max-w-[30rem] md:max-w-[35rem] lg:max-w-[40rem] xl:max-w-[45rem]">
                 <img
                   src={frame}
                   alt="ProbizConnect mobile app interface"
-                  className="w-full h-auto rounded-2xl shadow-2xl sm:rounded-3xl mb-40"
+                  className="w-full h-auto rounded-2xl sm:rounded-3xl shadow-2xl"
                 />
 
                 {/* Floating Feature Cards - Hidden on mobile, visible on larger screens */}
@@ -153,7 +161,7 @@ export function ApplexLanding() {
                   <img
                     src={glass}
                     alt="ProbizConnect Logo"
-                    className="w-full h-full xl:w-full xl:h-fullmb-2"
+                    className="w-full h-full object-contain mb-2"
                   />
                 </div>
 
@@ -185,7 +193,7 @@ export function ApplexLanding() {
                     </div>
                   </div> */}
 
-                  {/* <img src={frame4} alt="Probiz Logo" className="w-full h-full xl:w-full xl:h-fullmb-2" /> */}
+                  {/* <img src={frame4} alt="Probiz Logo" className="w-full h-full object-contain mb-2" /> */}
                 </div>
 
                 <div className="hidden lg:block absolute -right-28 xl:-right-68 bottom-32 w-44 xl:w-52 transform -rotate-[-10deg]">
@@ -274,17 +282,18 @@ export function ApplexLanding() {
        {/* Recent Articles */}
       <section className="px-4 sm:px-6 py-12 sm:py-16 lg:py-20 bg-gradient-card">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16 animate-slide-up">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6">
-              GAIN 360° - Visibility & Control
+          <Reveal className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <span className="inline-block text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-purple-600 mb-3">Why ProbizConnect</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
+              GAIN 360° — Visibility & Control
             </h2>
             {/*<p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
               Stay updated with industry news, tips, and the latest productivity
               workflow optimization strategies.
-            </p>*/}
-          </div>
+            }*/}
+          </Reveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          <Stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {[
               {
                 title: "Sales Connect",
@@ -335,9 +344,9 @@ export function ApplexLanding() {
                 icon: <Award className="w-8 h-8" />,
               },
             ].map((article, index) => (
+              <StaggerItem key={index}>
               <Card
-                key={index}
-                className="p-4 sm:p-6 bg-card backdrop-blur-sm border-0 shadow-card hover:shadow-floating transition-all duration-300 hover:-translate-y-1 animate-fade-in group cursor-pointer hover:shadow-[0_8px_30px_rgb(219,234,254,0.6)]"
+                className="p-4 sm:p-6 bg-white/80 backdrop-blur-sm border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5 group cursor-pointer rounded-2xl"
               >
                 {/* Icon Header */}
                 <div className="mb-4 sm:mb-6">
@@ -362,20 +371,21 @@ export function ApplexLanding() {
                   <ArrowRight className="w-3 sm:w-4 h-3 sm:h-4 ml-2" />
                 </div> */}
               </Card>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
 
       <section className="bg-gradient-to-b from-[#dbeafe] via-[#eef2ff] to-[#fff1f2] py-12 sm:py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6">
+          <Reveal as="h1" className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
             Supercharge your{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
               Sale and Distribution with AI Today
             </span>
-          </h1>
+          </Reveal>
 
           {/* <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 items-center justify-items-center">
            
@@ -406,8 +416,9 @@ export function ApplexLanding() {
       <section className="px-4 sm:px-6 py-12 sm:py-16 lg:py-20 bg-gradient-card">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="animate-slide-up order-2 lg:order-1">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6">
+            <Reveal className="order-2 lg:order-1">
+              <span className="inline-block text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-purple-600 mb-3">Built for scale</span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
                 Cutting-Edge Technology
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
@@ -434,7 +445,7 @@ export function ApplexLanding() {
                   className="bg-[#00143e] hover:opacity-90 rounded-full px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg flex items-center justify-center"
                 >
                   <a
-                    href="https://dealerconnect.in/book-a-demo"
+                    href="#/book-a-demo"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -449,7 +460,7 @@ export function ApplexLanding() {
                   className="bg-[#00143e] hover:opacity-90 rounded-full px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg flex items-center justify-center"
                 >
                   <a
-                    href="https://dealerconnect.in/book-a-demo"
+                    href="#/book-a-demo"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -457,213 +468,91 @@ export function ApplexLanding() {
                   </a>
                 </Button>
               </div>
-            </div>
-            <div className="flex justify-center animate-bounce-in order-1 lg:order-2">
+            </Reveal>
+            <Reveal delay={0.15} className="flex justify-center order-1 lg:order-2">
               <img
                 src={home}
                 alt="Applex calendar interface"
-                className="w-full max-w-md  rounded-2xl sm:rounded-3xl shadow-floating"
+                className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto object-contain rounded-2xl sm:rounded-3xl shadow-floating"
               />
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       <section className="bg-gradient-to-b from-blue-50 via-purple-50 to-pink-50 py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <Reveal>
+          <span className="inline-block text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-purple-600 mb-3">Ecosystem</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
             Over 25+ Integrations
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-16 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
             Unlock limitless possibilities with our platform's extensive library
             of over 25+ integrations, empowering seamless connectivity across
             your favorite tools and services.
           </p>
+          </Reveal>
 
-          {/* Integration Logos Grid */}
-          <div className="space-y-8 mb-16">
-            {/* Row 1 - 5 items */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  justify-items-center">
-              <div className="flex items-center justify-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-40 h-24 max-w-48">
-                {/* <div className="text-center">
-                  <div className="text-2xl font-bold text-red-600 mb-2">Tally</div>
-                  <div className="text-xs text-gray-500">POWER OF SIMPLICITY</div>
-                </div> */}
-                <img
-                  src={company1}
-                  alt="Tally Logo"
-                  className="w-full h-24 object-contain"
-                />
-              </div>
-
-              <div className="flex items-center justify-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-40 h-24 max-w-48">
-                {/* <div className="text-center">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 bg-clip-text text-transparent">Zoho</div>
-                </div> */}
-                <img
-                  src={company2}
-                  alt="Zoho Logo"
-                  className="w-full h-24 object-contain"
-                />
-              </div>
-
-              <div className="flex items-center justify-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-40 h-24 max-w-48">
-                {/* <div className="text-center">
-                  <div className="text-2xl font-bold text-red-600">IndiaMART</div>
-                  <div className="text-lg text-red-600">M</div>
-                </div> */}
-                <img
-                  src={company3}
-                  alt="IndiaMART Logo"
-                  className="w-full h-24 object-contain"
-                />
-              </div>
-
-              <div className="flex items-center justify-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-40 h-24 max-w-48">
-                {/* <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-500">Justdial</div>
-                </div> */}
-                <img
-                  src={company4}
-                  alt="Justdial Logo"
-                  className="w-full h-24 object-contain"
-                />
-              </div>
-
-              {/* <div className="flex items-center justify-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-full max-w-48">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-500">paytm</div>
-                  <div className="text-lg text-blue-500">■</div>
-                </div>
-              </div> */}
-            </div>
-
-            {/* Row 2 - 6 items */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 justify-items-center">
-              <div className="flex items-center justify-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-40 h-24 max-w-48">
-                {/* <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-500">aws</div>
-                  <div className="text-orange-400 text-xs">amazon web services</div>
-                </div> */}
-                <img
-                  src={company5}
-                  alt="Justdial Logo"
-                  className="w-full h-24 object-contain"
-                />
-              </div>
-
-              <div className="flex items-center justify-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-40 h-24 max-w-48">
-                {/* <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-600">SAP</div>
-                </div> */}
-                <img
-                  src={company6}
-                  alt="greythur"
-                  className="w-full h-24 object-contain"
-                />
-              </div>
-
-              <div className="flex items-center justify-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-40 h-24 max-w-48">
-                {/* <div className="text-center">
-                  <div className="text-2xl font-bold text-cyan-500">NAVISION</div>
-                </div> */}
-                <img
-                  src={company7}
-                  alt="Razorpay"
-                  className="w-full h-24 object-contain"
-                />
-              </div>
-
-              <div className="flex items-center justify-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-40 h-24 max-w-48">
-                {/* <div className="text-center">
-                  <div className="text-xl font-bold text-gray-600">greytHR</div>
-                </div> */}
-                <img
-                  src={company8}
-                  alt="indiamart"
-                  className="w-full h-24 object-contain"
-                />
-              </div>
-
-              <div className="flex items-center justify-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-40 h-24 max-w-48">
-                {/* <div className="text-center">
-                  <div className="text-xl font-bold text-green-600">● HRone</div>
-                </div> */}
-                <img
-                  src={company9}
-                  alt="keka"
-                  className="w-full h-24 object-contain"
-                />
-              </div>
-            </div>
-
-            {/* Row 3 - 5 items */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center">
-              <div className="flex items-center justify-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-40 h-24 max-w-48">
-                {/* <div className="text-center">
-                  <div className="text-2xl text-green-500">📱</div>
-                  <div className="text-sm font-bold text-gray-700">WhatsApp</div>
-                </div> */}
-                <img
-                  src={company11}
-                  alt="SAP"
-                  className="w-full h-24 object-contain"
-                />
-              </div>
-
-              <div className="flex items-center justify-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-40 h-24 max-w-48">
-                {/* <div className="text-center">
-                  <div className="text-xl font-bold text-green-600">QuickBooks</div>
-                </div> */}
-                <img
-                  src={company12}
-                  alt="Whatsapp"
-                  className="w-full h-24 object-contain"
-                />
-              </div>
-
-              <div className="flex items-center justify-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-40 h-24 max-w-48">
-                {/* <div className="text-center">
-                  <div className="text-xl font-bold text-gray-700">keka</div>
-                  <div className="text-blue-500">|||</div>
-                </div> */}
-                <img
-                  src={company13}
-                  alt="PayTm"
-                  className="w-full h-24 object-contain"
-                />
-              </div>
-
-              <div className="flex items-center justify-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-40 h-24 max-w-48">
-                {/* <div className="text-center">
-                  <div className="w-8 h-8 bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 to-blue-500 rounded-full mx-auto mb-2"></div>
-                  <div className="text-sm font-bold text-gray-700">Google Cloud</div>
-                </div> */}
-                <img
-                  src={company10}
-                  alt="quickbooks"
-                  className="w-full h-24 object-contain"
-                />
-              </div>
-
-              {/* <div className="flex items-center justify-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-40 h-24 max-w-48">
-                <div className="text-center">
-                  <div className="text-xl font-bold text-blue-500">Razorpay</div>
-                </div>
-              </div> */}
-
-              {/* <div className="flex items-center justify-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-40 h-24 max-w-48">
-                <div className="text-center">
-                  <div className="text-xl font-bold text-blue-400">freshservice</div>
-                  <div className="text-blue-400">●</div>
-                </div>
-              </div> */}
+          {/* Integration Logos Marquee */}
+          <div
+            className="logo-marquee group relative overflow-hidden mb-16"
+            style={{
+              maskImage:
+                'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+              WebkitMaskImage:
+                'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+            }}
+          >
+            <div className="logo-marquee-track flex w-max items-center gap-16 py-8">
+              {(() => {
+                const homeLogos = [
+                  { name: 'Tally', src: company1 },
+                  { name: 'Zoho', src: company2 },
+                  { name: 'Amazon', src: company3 },
+                  { name: 'Freshworks', src: company4 },
+                  { name: 'JustDial', src: company5 },
+                  { name: 'Greytip', src: company6 },
+                  { name: 'Razorpay', src: company7 },
+                  { name: 'IndiaMART', src: company8 },
+                  { name: 'Keka', src: company9 },
+                  { name: 'QuickBooks', src: company10 },
+                  { name: 'SAP', src: company11 },
+                  { name: 'WhatsApp', src: company12 },
+                  { name: 'Paytm', src: company13 },
+                ];
+                return [...homeLogos, ...homeLogos].map((logo, idx) => (
+                  <img
+                    key={`${logo.name}-${idx}`}
+                    src={logo.src}
+                    alt={`${logo.name} logo`}
+                    loading="lazy"
+                    className="h-12 md:h-14 w-auto object-contain shrink-0 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition duration-300"
+                  />
+                ));
+              })()}
             </div>
           </div>
 
+          <style>{`
+            @keyframes logo-marquee-scroll {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+            .logo-marquee-track {
+              animation: logo-marquee-scroll 40s linear infinite;
+            }
+            .logo-marquee:hover .logo-marquee-track {
+              animation-play-state: paused;
+            }
+            @media (prefers-reduced-motion: reduce) {
+              .logo-marquee-track { animation: none; }
+            }
+          `}</style>
+
           {/* CTA Button */}
           <a
-            href="https://dealerconnect.in/book-a-demo"
+            href="#/book-a-demo"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -678,9 +567,14 @@ export function ApplexLanding() {
       <section className="bg-gradient-to-b from-[#dbeafe] via-[#eef2ff] to-[#fff1f2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20 ">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16 animate-slide-up">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-sans text-foreground mb-4 sm:mb-6">
+            <img
+              src={mascot}
+              alt="ProbizConnect mascot"
+              className="w-32 sm:w-40 md:w-48 mx-auto mb-4 animate-float-soft drop-shadow-xl select-none"
+            />
+            <Reveal as="h2" className="text-3xl sm:text-4xl md:text-5xl font-bold font-sans text-foreground mb-4 sm:mb-6 leading-tight">
               Supercharge your sales <br /> with AI today!
-            </h2>
+            </Reveal>
             {/* <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
               Dive deeper into our resources to maximize your productivity and workflow efficiency.
             </p> */}
@@ -688,7 +582,7 @@ export function ApplexLanding() {
           <img
             src={frame12}
             alt="Explore"
-            className="w-full animate-fade-in rounded-lg shadow-xl shadow-black"
+            className="w-full max-w-5xl mx-auto h-auto object-cover animate-fade-in rounded-lg sm:rounded-2xl shadow-xl"
           />
         </div>
       </section>
@@ -711,7 +605,7 @@ export function ApplexLanding() {
                 className="bg-[#00143e] hover:opacity-90 rounded-full px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg flex items-center justify-center"
               >
                 <a
-                  href="https://dealerconnect.in/book-a-demo"
+                  href="#/book-a-demo"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -726,7 +620,7 @@ export function ApplexLanding() {
                 className="bg-[#00143e] hover:opacity-90 rounded-full px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg flex items-center justify-center"
               >
                 <a
-                  href="https://dealerconnect.in/book-a-demo"
+                  href="#/book-a-demo"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

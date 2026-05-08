@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/pclogo.png";
 import brochure from "@/assets/brochure.pdf";
 import { Link, NavLink } from 'react-router-dom';
 import { Button } from "../components/ui/button";
@@ -21,7 +21,16 @@ const AppBar = () => {
 
             {/* LEFT */}
             <div className="flex items-center space-x-4 sm:space-x-8">
-              <img src={logo} alt="Probiz Logo" width={200} height={100} />
+              <Link to="/" className="flex items-center gap-1">
+                <img src={logo} alt="Probiz Logo" className="h-7 w-auto md:h-8" />
+                <span
+                  className="text-base sm:text-lg md:text-xl font-bold leading-none tracking-tight"
+                  style={{ fontFamily: "'Quicksand', sans-serif" }}
+                >
+                  <span style={{ color: "#2e7cde" }}>Probiz</span>
+                  <span style={{ color: "#000000" }}>Connect</span>
+                </span>
+              </Link>
 
               {/* DESKTOP NAV */}
               <div className="hidden md:flex md:items-center md:space-x-4 absolute left-1/2 transform -translate-x-1/2">
@@ -80,7 +89,7 @@ const AppBar = () => {
 
             {/* RIGHT BUTTON */}
             <Button asChild className="hidden sm:flex sm:bg-foreground sm:text-background rounded-full px-4 lg:px-6">
-              <Link to="https://dealerconnect.in/book-a-demo">Book a Demo</Link>
+              <Link to="/book-a-demo">Book a Demo</Link>
             </Button>
 
             {/* MOBILE MENU ICON */}
@@ -109,7 +118,7 @@ const AppBar = () => {
                 <NavLink to="/contact">Contact</NavLink>
 
                 <Button asChild className="w-full">
-                  <Link to="https://dealerconnect.in/book-a-demo">Book a Demo</Link>
+                  <Link to="/book-a-demo">Book a Demo</Link>
                 </Button>
 
               </div>

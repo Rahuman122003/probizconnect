@@ -20,10 +20,11 @@ import {
   Network,
    X, 
 } from "lucide-react";
-import fq from "../assets/faqs.jpg";
-import glass from "@/assets/glasslogo.png";
+import fq from "../assets/mascot1.png";
+import glass from "@/assets/pclogo.png";
 import d1 from "@/assets/dcpg.png";
 import demoVideo from "@/assets/dcdemo.mp4";
+import { Reveal } from "@/components/Reveal";
 
 const DealerConnect = () => {
   const [animatedElements, setAnimatedElements] = useState({});
@@ -265,7 +266,7 @@ const DealerConnect = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href="https://dealerconnect.in/book-a-demo"
+                href="#/book-a-demo"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -335,9 +336,9 @@ const DealerConnect = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-semibold text-gray-900 mb-6">
+            <Reveal as="h2" className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-6 leading-tight">
               Smart Solution for Dealer Management
-            </h2>
+            </Reveal>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Transform your distribution strategy with our comprehensive dealer
               management platform
@@ -372,9 +373,9 @@ const DealerConnect = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <Reveal as="h2" className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               Work Flow Tracking
-            </h2>
+            </Reveal>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Everything you need to manage, analyze, and optimize your dealer
               network
@@ -459,9 +460,9 @@ const DealerConnect = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              <Reveal as="h2" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 leading-tight">
                 Monitor & Identify Top Performers
-              </h2>
+              </Reveal>
               <p className="text-gray-600 mb-8 text-lg leading-relaxed">
                 Probizconnect offers detailed analytics and performance reports to monitor and identify 
                 top-performing dealers, allowing you to reward them with incentives and motivate your 
@@ -521,13 +522,14 @@ const DealerConnect = () => {
           </p>
         </div>
         <div className="flex">
-          <div className="">
-            <img
-              src={fq}
-              alt="FAQs Background"
-              className="w-96 h-96 object-contain rounded-xl mr-12 hidden lg:block"
-            />
-          </div>
+          <div className="relative hidden lg:block">
+                        <img
+                          src={fq}
+              alt="Got a question? Our mascot is here to help"
+              className="w-72 xl:w-80 object-contain animate-float-soft drop-shadow-[0_25px_35px_rgba(124,58,237,0.25)] select-none"
+                        />
+                        <span className="mascot-ground" />
+                      </div>
           <div className="max-w-4xl mx-auto">
             <div className="space-y-4">
               {faqs.map((faq, index) => (
@@ -575,7 +577,7 @@ const DealerConnect = () => {
             <img
               src={glass}
               alt="Dealer Connect Logo"
-              className="w-32 h-32 rounded-full mx-auto mb-2 border-2 border-white shadow-lg"
+              className="w-20 h-20 rounded-full mx-auto mb-2 border-2 border-white shadow-lg"
             />
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -588,7 +590,7 @@ const DealerConnect = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://dealerconnect.in/book-a-demo"
+              href="#/book-a-demo"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -597,7 +599,7 @@ const DealerConnect = () => {
               </button>
             </a>
             <a
-              href="https://dealerconnect.in/book-a-demo/ola/services/consultation"
+              href="#/book-a-demo"
               target="_blank"
               rel="noopener noreferrer"
             >

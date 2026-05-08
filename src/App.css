@@ -18,6 +18,49 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50%      { transform: translateY(-14px) rotate(2deg); }
+}
+.animate-float-soft {
+  animation: float-soft 5s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes float-tilt {
+  0%, 100% { transform: translateY(0) rotate(-6deg); }
+  50%      { transform: translateY(-10px) rotate(-2deg); }
+}
+.animate-float-tilt {
+  animation: float-tilt 4.5s ease-in-out infinite;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-soft, .animate-float-tilt { animation: none; }
+}
+
+/* Ground shadow that pulses subtly while mascot floats — gives "hovering above surface" effect */
+@keyframes ground-pulse {
+  0%, 100% { transform: translateX(-50%) scale(1);    opacity: 0.85; }
+  50%      { transform: translateX(-50%) scale(0.7);  opacity: 0.55; }
+}
+.mascot-ground {
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 80%;
+  height: 28px;
+  border-radius: 9999px;
+  background: radial-gradient(ellipse at center, rgba(31,41,55,0.55) 0%, rgba(124,58,237,0.35) 45%, rgba(124,58,237,0) 75%);
+  filter: blur(8px);
+  transform: translateX(-50%);
+  animation: ground-pulse 5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mascot-ground { animation: none; }
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
