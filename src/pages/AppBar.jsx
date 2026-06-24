@@ -67,7 +67,7 @@ const AppBar = () => {
                   </div>
                 </div>
 
-                <NavLink to="https://dealerconnect.in/blog" className={baseClasses}>
+                <NavLink to="https://blogsbyprobiz.vercel.app/probiz-connect/blogs" className={baseClasses}>
                   Blogs
                 </NavLink>
 
