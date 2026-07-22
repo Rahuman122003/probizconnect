@@ -194,7 +194,7 @@ const Contact = () => {
                   <p className="text-green-100 mb-6">Get instant answers from our team</p>
                   <button
                     onClick={() =>
-                      window.open("https://wa.me/919900029602", "_blank") // change number
+                      window.open("https://wa.me/919916199499", "_blank") // change number
                     }
                     className="bg-white text-green-600 px-6 py-3 rounded-full font-semibold hover:bg-green-50 transition-colors duration-300 flex items-center gap-2 group"
                   >
@@ -214,11 +214,11 @@ const Contact = () => {
                 <div className="text-white">
                   <Phone className="w-12 h-12 mb-4 animate-pulse" />
                   <h3 className="text-2xl font-bold mb-2">Call us</h3>
-                  <p className="text-green-100 mb-6 font-medium">+91 99000 29602, 
+                  <p className="text-green-100 mb-6 font-medium">
                   +91 96631 77996, 
+                  +91 99161 99499,
                   +91 80152 86598</p>
-                 
-
+                
                 </div>
               </div>
             </div>
