@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { MapPin, Phone, Mail, MessageSquare, Send, CheckCircle, Sparkles, ArrowUpRight, PinIcon, Locate, LocateOffIcon, Pin } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import contact from "@/assets/contact.webp";
 import mascot from "@/assets/mascot.png";
 import { Reveal } from "@/components/Reveal";
@@ -45,12 +46,24 @@ const Contact = () => {
       newsletter: formData.newsletter ? "Yes" : "No"
     };
 
-    emailjs.send(
-      "service_ehbfihd",     //  replaced
-      "template_gtw90ho",    //  replaced
-      templateParams,
-      "QbkQHL7iND_gxWE_p"      //  replaced
-    )
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const contactTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const autoReplyTemplateId = import.meta.env.VITE_EMAILJS_AUTO_REPLY_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    // Send Contact Us Admin Notification
+    const sends = [
+      emailjs.send(serviceId, contactTemplateId, templateParams, publicKey)
+    ];
+
+    // Send Auto Reply to Customer if Auto Reply Template ID is provided
+    if (autoReplyTemplateId && autoReplyTemplateId !== "your_auto_reply_template_id_here") {
+      sends.push(
+        emailjs.send(serviceId, autoReplyTemplateId, templateParams, publicKey)
+      );
+    }
+
+    Promise.all(sends)
     .then(() => {
       alert("✅ Message sent successfully!");
       setFormData({
@@ -60,7 +73,8 @@ const Contact = () => {
         newsletter: false
       });
     })
-    .catch(() => {
+    .catch((error) => {
+      console.error("EmailJS Error:", error);
       alert("❌ Failed to send message. Try again.");
     })
     .finally(() => {
