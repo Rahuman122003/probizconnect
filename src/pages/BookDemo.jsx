@@ -181,7 +181,7 @@ const BookDemo = () => {
                   Or call us
                 </span>
               </div>
-              <div className="text-2xl font-bold">+91 96631 77996</div>
+              <div className="text-2xl font-bold">+91 99161 99499</div>
               <div className="text-sm opacity-90 mt-1">
                 Mon – Sat, 10:00 AM – 7:00 PM IST
               </div>
